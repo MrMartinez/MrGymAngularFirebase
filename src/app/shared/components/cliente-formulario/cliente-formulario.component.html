@@ -1,0 +1,63 @@
+<div class="card bg-ingo mb-3 mt-2">
+  <div class="card-header">
+    <h5>Editar Cliente</h5>
+  </div>
+  <div class="card-body">
+    <form [formGroup]="clienteForm" class="mt-34" (ngSubmit)="guardarCambios()">
+      <div class="row">
+        <div class="col-md-4">
+          <div>
+            <img src="{{cliente.imgUrl}}" alt="fogo cliente" width="350" height="390" formGroupName="imgUrl">
+          </div>
+        </div>
+        <div class="col-md-8">
+          <div class="row">
+            <div class="form-group col-md-6">
+              <b>Nombres:</b> <input type="text" class="form-control" placeholder="Nombres" formControlName="nombres">
+            </div>
+            <div class="form-group col-md-6">
+              <b>Apellidos:</b><input type="text" class="form-control" placeholder="Apellidos"
+                formControlName="apellidos">
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="form-group col-md-6">
+              <b>Cedula:</b><input type="text" class="form-control" placeholder="Cedula" formControlName="cedula">
+            </div>
+            <div class="form-group col-md-6">
+              <b>Telefono</b><input type="text" class="form-control" placeholder="Telefono" formControlName="telefono">
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="form-group col-md-6">
+              <b>Fecha Nacimiento</b><input type="text" class="form-control" placeholder="Fecha Nacimiento"
+                formControlName="fechaNacimiento">
+            </div>
+            <div class="form-group col-md-6">
+              <b>Email:</b><input type="text" class="form-control" placeholder="Email" formControlName="email">
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="form-group ">
+              <b>Direccion:</b><input type="text" class="form-control" placeholder="Direccion"
+                formControlName="direccion">
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="btn-group" role="group" aria-label="Button group">
+          <button type="button" class="btn  btn-secondary m-2" (click)="irInfoCliente()">Cancelar <i
+              class="fas fa-ban"></i></button>
+          <button type="button" class="btn btn-success m-2" (click)="guardarCambios()">Guardar Cambios <i
+              class="fas fa-save"></i></button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+</div>

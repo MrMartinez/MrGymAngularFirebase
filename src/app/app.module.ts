@@ -8,6 +8,7 @@ import { ListadoClientesComponent } from './pages/clientes/listado-clientes/list
 import { CrearClienteComponent } from './pages/clientes/crear-cliente/crear-cliente.component';
 import { EditarClienteComponent } from './pages/clientes/editar-cliente/editar-cliente.component';
 import { DetalleClienteComponent } from './pages/clientes/detalle-cliente/detalle-cliente.component';
+import { ClienteFormularioComponent } from './shared/components/cliente-formulario/cliente-formulario.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { DetalleClienteComponent } from './pages/clientes/detalle-cliente/detall
     CrearClienteComponent,
     EditarClienteComponent,
     DetalleClienteComponent,
+    ClienteFormularioComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [],

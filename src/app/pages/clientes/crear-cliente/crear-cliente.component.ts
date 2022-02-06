@@ -2,14 +2,11 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-crear-cliente',
-  templateUrl: './crear-cliente.component.html',
-  styleUrls: ['./crear-cliente.component.scss']
+  template: `<app-cliente-formulario></app-cliente-formulario>`,
+  styleUrls: ['./crear-cliente.component.scss'],
 })
 export class CrearClienteComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }
