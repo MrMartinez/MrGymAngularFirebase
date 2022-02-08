@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Cliente } from '../header/models/cliente.interface';
@@ -9,12 +9,17 @@ import { Cliente } from '../header/models/cliente.interface';
   styleUrls: ['./cliente-formulario.component.scss'],
 })
 export class ClienteFormularioComponent implements OnInit {
-  cliente: Cliente;
+  cliente!: Cliente;
   clienteForm!: FormGroup;
   private isEmail = '/S+@S+.S+/';
   constructor(private router: Router, private fb: FormBuilder) {
     const navigation = this.router.getCurrentNavigation();
-    this.cliente = navigation?.extras?.state!['value'];
+
+    // debo validar si es nula o undefined para poder hacer esa llamda. porque me da error al cargar el formulario cuanod la traigo de nueva o de editar
+    if (typeof navigation?.extras?.state !== 'undefined') {
+      this.cliente = navigation?.extras?.state!['value'];
+    }
+
     this.initForm();
   }
 

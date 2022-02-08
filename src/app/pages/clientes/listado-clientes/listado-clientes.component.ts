@@ -62,6 +62,9 @@ export class ListadoClientesComponent implements OnInit {
   constructor(private router: Router) {}
 
   ngOnInit(): void {}
+  irCrarCliente() {
+    this.router.navigateByUrl('cliente/crear');
+  }
   irInfoCliente(item: Cliente): void {
     this.navigationExtras.state!['value']! = item;
     this.router.navigate(['cliente/detalles'], this.navigationExtras);
