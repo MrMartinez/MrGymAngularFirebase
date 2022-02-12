@@ -1,7 +1,7 @@
-import { DetalleClienteComponent } from './pages/clientes/detalle-cliente/detalle-cliente.component';
-import { EditarClienteComponent } from './pages/clientes/editar-cliente/editar-cliente.component';
-import { CrearClienteComponent } from './pages/clientes/crear-cliente/crear-cliente.component';
-import { ListadoClientesComponent } from './pages/clientes/listado-clientes/listado-clientes.component';
+import { DetalleClienteComponent } from './clientes/pages/detalle-cliente/detalle-cliente.component';
+import { EditarClienteComponent } from './clientes/pages/editar-cliente/editar-cliente.component';
+import { CrearClienteComponent } from './clientes/pages/crear-cliente/crear-cliente.component';
+import { ListadoClientesComponent } from './clientes/pages/listado-clientes/listado-clientes.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -16,19 +16,19 @@ const routes: Routes = [
   //   component: InscripcionesComponent,
   // },
   {
-    path: 'cliente/listar',
+    path: 'clientes/listar',
     component: ListadoClientesComponent,
   },
   {
-    path: 'cliente/crear',
+    path: 'clientes/crear',
     component: CrearClienteComponent,
   },
   {
-    path: 'cliente/editar',
+    path: 'clientes/editar',
     component: EditarClienteComponent,
   },
   {
-    path: 'cliente/detalles',
+    path: 'clientes/detalles',
     component: DetalleClienteComponent,
   },
 ];

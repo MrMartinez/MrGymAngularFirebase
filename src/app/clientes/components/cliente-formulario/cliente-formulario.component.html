@@ -1,3 +1,7 @@
+<div class="alert alert-dismissible alert-success" *ngIf="guardando">
+  <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+  <strong>Well done!</strong> You successfully read <a href="#" class="alert-link">this important alert message</a>.
+</div>
 <div class="card bg-ingo mb-3 mt-2">
   <div class="card-header">
     <h5>Editar Cliente</h5>
@@ -13,11 +17,18 @@
         <div class="col-md-8">
           <div class="row">
             <div class="form-group col-md-6">
-              <b>Nombres:</b> <input type="text" class="form-control" placeholder="Nombres" formControlName="nombres">
+              <b>Nombres:</b> <input type="text" class="form-control" placeholder="Nombres" formControlName="nombres"
+                [class]="validarCampos('nombres')">
+              <div class="invalid-feedback">
+                <span *ngIf="clienteForm.get('nombres')?.errors?.['required']! ">Nombres obligatorios</span>
+              </div>
             </div>
             <div class="form-group col-md-6">
               <b>Apellidos:</b><input type="text" class="form-control" placeholder="Apellidos"
-                formControlName="apellidos">
+                formControlName="apellidos" [class]="validarCampos('apellidos')">
+              <div class="invalid-feedback">
+                <span *ngIf="clienteForm.get('nombres')?.errors?.['required']! ">Apellidos obligatorios</span>
+              </div>
             </div>
           </div>
           <br>
@@ -33,10 +44,18 @@
           <div class="row">
             <div class="form-group col-md-6">
               <b>Fecha Nacimiento</b><input type="text" class="form-control" placeholder="Fecha Nacimiento"
-                formControlName="fechaNacimiento">
+                formControlName="fechaNacimiento" [class]="validarCampos('fechaNacimiento')">
+              <div class="invalid-feedback">
+                <span *ngIf="clienteForm.get('fechaNacimiento')?.errors?.['required']! ">Debe indicar su fecha
+                  nacimiento</span>
+              </div>
             </div>
             <div class="form-group col-md-6">
-              <b>Email:</b><input type="text" class="form-control" placeholder="Email" formControlName="email">
+              <b>Email:</b><input type="text" class="form-control" placeholder="Email" formControlName="email"
+                [class]="validarCampos('email')">
+              <div class="invalid-feedback">
+                <span *ngIf="clienteForm.get('email')?.errors?.['pattern']!">Este email no es valido</span>
+              </div>
             </div>
           </div>
           <br>
@@ -44,6 +63,7 @@
             <div class="form-group ">
               <b>Direccion:</b><input type="text" class="form-control" placeholder="Direccion"
                 formControlName="direccion">
+
             </div>
 
           </div>

@@ -10,7 +10,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr class="table-secondary" *ngFor="let item of listadoClientes">
+      <tr class="table-secondary" *ngFor="let item of listadoClientes | async">
         <td> <img src="{{item.imgUrl}}" width="80px" height="55px" /> </td>
         <th>{{item.nombres}} {{item.apellidos}}</th>
 
@@ -20,8 +20,8 @@
               class="fas fa-info"></i></button>
           <button type="button" class="btn btn-outline-warning m-1" (click)="irEditarCliente(item)">Editar <i
               class="fas fa-user-edit"></i></button>
-          <button type="button" class="btn btn-outline-danger m-1" (click)="irEliminarCliente(item)">Eliminar <i
-              class="fas fa-user-minus"></i></button>
+          <button type="button" class="btn btn-outline-danger m-1" (click)="irEliminarCliente(item)">Eliminar
+            <i class="fas fa-user-minus"></i></button>
         </td>
       </tr>
     </tbody>

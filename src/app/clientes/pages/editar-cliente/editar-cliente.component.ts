@@ -1,4 +1,4 @@
-import { Cliente } from './../../../shared/components/header/models/cliente.interface';
+import { Cliente } from '../../../shared/components/header/models/cliente.interface';
 import { Component, OnInit } from '@angular/core';
 import {
   FormBuilder,
