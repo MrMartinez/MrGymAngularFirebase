@@ -1,12 +1,4 @@
-import { Cliente } from '../../../shared/components/header/models/cliente.interface';
 import { Component, OnInit } from '@angular/core';
-import {
-  FormBuilder,
-  FormControl,
-  FormGroup,
-  Validators,
-} from '@angular/forms';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-editar-cliente',
@@ -15,6 +7,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./editar-cliente.component.scss'],
 })
 export class EditarClienteComponent implements OnInit {
+  // Se ha comenado todo el codigo porque se esta usando el template de ClienteFormulario. ver declaracion arriba
+
   // cliente: Cliente;
   // clienteForm!: FormGroup;
   // private isEmail = '/S+@S+.S+/';

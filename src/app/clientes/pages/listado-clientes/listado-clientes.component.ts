@@ -1,8 +1,7 @@
-import { Observable } from 'rxjs';
-import { Cliente } from '../../../shared/components/header/models/cliente.interface';
 import { NavigationExtras, Router, RouterModule } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { ClientesService } from '../../services/clientes.service';
+import { Cliente } from 'src/app/shared/models/cliente.interface';
 
 @Component({
   selector: 'app-listado-clientes',

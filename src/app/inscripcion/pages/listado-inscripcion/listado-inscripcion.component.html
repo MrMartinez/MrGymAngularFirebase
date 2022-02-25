@@ -1,0 +1,30 @@
+<div class="row m-2">
+  <button class="btn btn-success btn-lg" (click)="irCrarInscripcion()">Nuevo <i class="far fa-list-alt"></i></button>
+</div>
+<div class="table-responsive">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Cliente</th>
+        <th scope="col">Tipo Inscripcion</th>
+        <th scope="col"> Precio</th>
+        <th scope="col" class="d-none d-sm-block">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="table-secondary" *ngFor="let item of listadoInscripciones">
+        <th>{{item.cliente.nombres}} {{item.cliente.apellidos}}</th>
+        <td>{{item.precio.nombre}}</td>
+        <td>{{item.precio.costo}}</td>
+        <td class="btn-group d-none d-sm-block" role="group" aria-label="Button group">
+          <button type="button" class="btn btn-outline-info m-1" (click)="irInfoInscripcion(item)">Info <i
+              class="fas fa-info"></i></button>
+          <button type="button" class="btn btn-outline-warning m-1" (click)="irEditarInscripcion(item)">Editar <i
+              class="fas fa-user-edit"></i></button>
+          <button type="button" class="btn btn-outline-danger m-1" (click)="EliminarInscripcion(item)">Eliminar
+            <i class="fas fa-user-minus"></i></button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,7 +1,7 @@
 import { ClientesService } from './../../services/clientes.service';
 import { Component, OnInit } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router';
-import { Cliente } from 'src/app/shared/components/header/models/cliente.interface';
+import { Cliente } from 'src/app/shared/models/cliente.interface';
 
 @Component({
   selector: 'app-detalle-cliente',

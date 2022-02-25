@@ -1,0 +1,74 @@
+<div class="card bg-ingo mb-3 mt-2">
+  <div class="card-header">
+    <h5>Precio</h5>
+  </div>
+  <div class="card-body">
+    <form [formGroup]="precioForm" class="mt-34" (ngSubmit)="guardarCambios()">
+      <div class="row">
+        <div class="col-md-8">
+          <div class="row">
+            <div class="form-group col-md-6">
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="floatingNombre" formControlName="nombre"
+                  placeholder="Nombre obligatorio" [class]="validarCampos('nombre')">
+                <label for="floatingNombre">Nombre:</label>
+                <div class="invalid-feedback">
+                  <span *ngIf="precioForm.get('nombre')?.errors?.['required']! ">Nombre obligatorios</span>
+                </div>
+              </div>
+            </div>
+            <div class="form-group col-md-6">
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="floatingCosto" placeholder="Indique el costo"
+                  formControlName="costo" [class]="validarCampos('costo')">
+                <label for="floatingCosto">Costo:</label>
+                <div class="invalid-feedback">
+                  <span *ngIf="precioForm.get('costo')?.errors?.['required']! ">Costo obligatorio</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="form-group col-md-6">
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="floatingDuracion" formControlName="duracion"
+                  placeholder="Indique la duracion" [class]="validarCampos('duracion')">
+                <label for="floatingDuracion">Duración</label>
+                <div class="invalid-feedback">
+                  <span *ngIf="precioForm.get('duracion')?.errors?.['required']! ">Indique la duracion</span>
+                </div>
+              </div>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="floatingPeriodo">Período:</label>
+              <select formControlName="tipoDuracion" id="floatingPeriodo" class="form-control"
+                placeholder="Indique el periodo">
+                <option value="1">Dia</option>
+                <option value="2">Semana</option>
+                <option value="3">Quincena</option>
+                <option value="4">Mes</option>
+                <option value="5">Año</option>
+              </select>
+              <div class="invalid-feedback">
+                <span *ngIf="precioForm.get('duracion')?.errors?.['required']! ">Indique el periodo</span>
+              </div>
+            </div>
+          </div>
+          <br>
+
+          <br>
+        </div>
+      </div>
+      <div class="row">
+        <div class="btn-group" role="group" aria-label="Button group">
+          <button type="button" class="btn  btn-secondary m-2" (click)="irListadoPrecios()">Cancelar <i
+              class="fas fa-ban"></i></button>
+          <button type="button" class="btn btn-success m-2" (click)="guardarCambios()">Guardar Cambios <i
+              class="fas fa-save"></i></button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+</div>

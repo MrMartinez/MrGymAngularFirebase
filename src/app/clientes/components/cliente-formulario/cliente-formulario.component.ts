@@ -19,10 +19,10 @@ import { Cliente } from 'src/app/shared/models/cliente.interface';
 export class ClienteFormularioComponent implements OnInit {
   cliente!: Cliente;
   clienteForm!: FormGroup;
-  guardando: boolean = false;
-  subiendo!: boolean;
-  porcentajeImagenSubida: any;
-  urlImagen: string = '';
+  // guardando: boolean = false;
+  // subiendo!: boolean;
+  // porcentajeImagenSubida: any;
+  // urlImagen: string = '';
   private isEmail =
     '[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{2,5}';
   constructor(
@@ -52,7 +52,7 @@ export class ClienteFormularioComponent implements OnInit {
   guardarCambios() {
     if (this.clienteForm.valid) {
       const cliente = this.clienteForm.value;
-      const clienteId = this.cliente?.clienteId || null;
+      const clienteId = this.cliente?.id || null;
       this.clienteSvs
         .guardarCambios(cliente, clienteId!)
         .then((result) => {

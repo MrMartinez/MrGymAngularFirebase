@@ -5,7 +5,6 @@ import {
 import { Injectable } from '@angular/core';
 import { Cliente } from 'src/app/shared/models/cliente.interface';
 import { Observable } from 'rxjs';
-import { async } from '@firebase/util';
 import { map } from 'rxjs/operators';
 
 @Injectable({

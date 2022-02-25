@@ -1,0 +1,36 @@
+<div class="row m-2">
+  <button class="btn btn-success btn-lg" (click)="irCrarPrecio()">Nuevo <i
+      class="fa-solid fa-hand-holding-dollar"></i></button>
+</div>
+<div class="table-responsive">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Nombre</th>
+        <th scope="col">Costo</th>
+        <th scope="col">Duraicon</th>
+        <th scope="col">Tipo Duracion</th>
+        <th scope="col" class="d-none d-sm-block">Acciones</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="table-secondary" *ngFor="let item of listadoPrecios | async">
+
+        <th>{{item.nombre}} </th>
+
+        <td>{{item.costo}}</td>
+        <td>{{item.duracion}}</td>
+        <td>{{item.tipoDuracion}}</td>
+        <td class="btn-group d-none d-sm-block" role="group" aria-label="Button group">
+          <!-- <button type="button" class="btn btn-outline-info m-1" (click)="irInfoPrecio(item)">Info <i
+              class="fas fa-info"></i></button> -->
+          <button type="button" class="btn btn-outline-warning m-1" (click)="irEditarPrecio(item)">Editar <i
+              class="fa-regular fa-pen-to-square"></i></button>
+          <button type="button" class="btn btn-outline-danger m-1" (click)="irEliminar(item.id!)">Eliminar
+            <i class="fa-regular fa-trash-can"></i></button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
